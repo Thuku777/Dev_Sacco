@@ -1,0 +1,27 @@
+APPLICATIONS
+    1.ACCOUNTS (Custom user model)
+        Super user
+        Staff
+        Local user(Members)
+
+    2.CONTACTS
+        Company contacts
+
+    3.PAGES
+        About page
+        Vision, Mission
+        Sacco statistics
+
+    4.SERVICES
+        Resources(Events, Notices)
+        Loan services(templates)
+        Saving accounts(templates)
+        Financial updates(templates)
+
+    5.PRODUCTS
+        Loan products
+        Saving products
+    
+    6.BANKING
+        Mobile Banking
+        Mpesa

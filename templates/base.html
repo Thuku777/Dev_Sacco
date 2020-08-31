@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Favicon -->
+    <link href="{% static 'img/favicons.png' %}" rel="shortcut icon"/>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+  <!-- CSS -->
+  {% include 'base/css.html' %}
+  <style>
+    .logo {
+    width: 40px; 
+    height: 40px;}
+  </style>
+
+  <title>Dev 
+    {% block title %}
+      
+    {% endblock %}</title>
+</head>
+
+<body>
+  <!-- Pre-loader -->
+  {% include 'partials/_preloader.html' %}
+
+  <!-- Top Bar -->
+  {% include 'partials/_topbar.html' %}
+
+  <!-- NavBar -->
+  {% include 'partials/_navbar.html' %}
+
+  <!-- Main Content -->
+  {% block content %} 
+
+  {% endblock %}
+
+  <!-- Footer -->
+  {% include 'partials/_footer.html' %}
+  
+
+  <!-- Javascript -->
+  {% include 'base/js.html' %}
+  {% block javascript %}
+
+  {% endblock %}
+</body>
+
+</html>

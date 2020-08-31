@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %} | Register Account {% endblock %}
+
+{% block content %}
+<br>
+<section id="register" class="bg-light py-5 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 mx-auto">
+          <form action="{% url 'register' %}" method="POST">
+          {% csrf_token %}
+          <div class="auth-card card">
+              <div class="auth-card-header card-header">
+                <h4><i class="fas fa-user-plus"></i> Register</h4>
+              </div>
+              <div class="card-body">
+                <!-- Alerts -->
+                {% include 'partials/_alerts.html' %}
+                
+                <div class="reg-form-col col-md-12">
+                  <div class="reg-form form-group col-md-5">
+                    <label for="first_name">First Name</label>
+                    <input type="text" name="first_name" class="form-control" required>
+                  </div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <div class="reg-form form-group col-md-5">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" name="last_name" class="form-control" required>
+                  </div>
+                </div>
+                  
+                <div class="reg-form-col col-md-12">
+                  <div class="reg-form form-group col-md-5">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" class="form-control" required>
+                  </div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <div class="reg-form form-group col-md-5">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" class="form-control" required>
+                  </div>
+                </div>
+
+                <div class="reg-form-col col-md-12">
+                  <div class="reg-form form-group col-md-5">
+                    <label for="password2">Password</label>
+                    <input type="password" name="password" class="form-control" required>
+                  </div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <div class="reg-form form-group col-md-5">
+                    <label for="password">Confirm Password</label>
+                    <input type="password" name="password2" class="form-control" required>
+                  </div>
+                </div>
+              </div>
+              <div class="auth-card-footer card-footer">
+                <input type="submit" value="Register" class="auth-btn btn-block">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock %}
