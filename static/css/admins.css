@@ -1,6 +1,6 @@
 #header {
     height: 50px;
-    background: #10284e;
+    background: #00307c;
     color: #fff;
   }
   
@@ -10,23 +10,23 @@
   
   a:link,
   a:visited {
-    color:#10284e;
+    color:#00307c;
   }
   
   div.breadcrumbs {
-    background: #30caa0;
-    color: #10284e;
+    background: green;
+    color: #00307c;
   }
   
   div.breadcrumbs a {
-    color: #333;
+    color: black;
   }
   
   .module h2, .module caption, .inline-group h2 {
-    background: #30caa0;
+    background: green;
   }
   
   .button, input[type=submit], input[type=button], .submit-row input, a.button {
-    background: #10284e;
+    background: #00307c;
     color: #fff;
   }

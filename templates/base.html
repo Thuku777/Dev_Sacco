@@ -10,13 +10,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  <!-- Mapbox -->
+  {% include 'base/mapbox.html' %}
 
   <!-- CSS -->
   {% include 'base/css.html' %}
+
+  <!-- Fonts -->
+  {% include 'base/font.html' %}
   <style>
-    .logo {
-    width: 40px; 
-    height: 40px;}
+    .logo { width: 40px; height: 40px; }
+    .tabcontent { display: none; }
   </style>
 
   <title>Dev 
@@ -36,9 +40,7 @@
   {% include 'partials/_navbar.html' %}
 
   <!-- Main Content -->
-  {% block content %} 
-
-  {% endblock %}
+  {% block content %}   {% endblock %}
 
   <!-- Footer -->
   {% include 'partials/_footer.html' %}

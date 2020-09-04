@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} | Services{% endblock %}
+
+{% block content %}
+<div class="page-heading header-text">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Our Services</h1>
+                <span>We are over 20 years of experience</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if service.count > 0 %}
+<div class="single-services">
+  <h1 class="ml-5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fas fa-coins">&nbsp;&nbsp;Loans</i></h1>
+    <div class="container">
+      <div class="row" id="tabs">
+        <div class="col-md-3 tab">
+          <ul>
+            {% for service in service %}
+            <li class="m-1">
+            <a class="tablinks" href="#{{service.id}}" onclick="openService(event, '{{service.id}}')"
+            {% if service.id == 1 %} id="defaultOpen" {% endif %}>
+              {{service.title}}
+              <i class="fa fa-angle-right"></i>
+            </a>
+          </li>
+          {% endfor %}
+        </ul> 
+        </div>
+
+        <div class="col-md-8">
+          {% for service in service %}
+          <article class="tabcontent" id='{{service.id}}'>
+              <img src="{% static 'img/single_service_01.jpg' %}" alt="">
+              <h4>{{service.title}}</h4>
+              <p>{{service.description|truncatewords:"30"}}</p>
+            </article>
+            {% endfor %}
+          </div>
+      </div>
+    </div>
+</div>
+{% else %}
+<p>No items</p>
+{% endif %}
+
+<br><br>
+{% endblock %}

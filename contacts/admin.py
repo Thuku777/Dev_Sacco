@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Contact
+from .models import *
 
 class ContactAdmin(admin.ModelAdmin):
   list_display = ('id', 'name', 'email', 'contact_date')
@@ -9,3 +9,10 @@ class ContactAdmin(admin.ModelAdmin):
   list_per_page = 25
 
 admin.site.register(Contact, ContactAdmin)
+
+class CompanyContactAdmin(admin.ModelAdmin):
+  list_display = ('company_email', 'company_phone', 'company_location')
+  list_display_links = ('company_email', 'company_phone')
+  search_fields = ('company_email', 'company_phone')
+
+admin.site.register(CompanyContact, CompanyContactAdmin)

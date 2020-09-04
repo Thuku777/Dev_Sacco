@@ -25,6 +25,15 @@ SECRET_KEY = '!z!5=_y(x*lss3pf!8g52(gl%1l_*s7wjhg0=ht89l@7ae61l4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Email configuration
+EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_HOST_USER = 'thukuelvys@gmail.com'
+EMAIL_HOST_PASSWORD = 'kahuro777'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+# EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
+EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+
 ALLOWED_HOSTS = []
 
 
@@ -40,8 +49,11 @@ INSTALLED_APPS = [
 
     # Added 
     'accounts',
+    'blog',
     'contacts',
     'pages',
+    'maps',
+    'services',
 ]
 
 MIDDLEWARE = [
@@ -134,7 +146,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-LOGIN_URL = '/login/'
+# Custom user model 
+AUTH_USER_MODEL = 'accounts.User'
+LOGIN_URL = '/accounts/login'
 LOGIN_URL_REDIRECT = '/'
-LOGOUT_REDIRECT_URL = '/login/'
-LOGOUT_URL = '/logout/'
+LOGOUT_REDIRECT_URL = '/accounts/login'
+LOGOUT_URL = '/logout'

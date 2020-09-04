@@ -11,3 +11,11 @@ class Contact(models.Model):
   
   def __str__(self):
     return self.name
+
+class CompanyContact(models.Model):
+  company_phone = models.CharField(max_length=100)
+  company_email = models.CharField(max_length=100)
+  company_location = models.CharField(max_length=100)
+  
+  def __str__(self):
+    return self.company_email
